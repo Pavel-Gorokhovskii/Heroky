@@ -9,7 +9,30 @@
 
 <body>
     <?php
-    echo 'Hello WORLD!!!'
+    /*
+Username: 5HDGpZQpM6
+
+Database name: 5HDGpZQpM6
+
+Password: HxrlVnUEGT
+
+Server: remotemysql.com
+
+Port: 3306
+    */
+    $link = mysqli_connect("remotemysql.com", "5HDGpZQpM6", "HxrlVnUEGT")
+        or die("Не удалось соединиться с сервером");
+
+
+
+    // echo 'Hello WORLD!!!';
+
+    // for ($i = 1; $i <= 10; $i++) {
+    //     echo "<br> $i";
+    // }
+
+
+
     ?>
 </body>
 
