@@ -23,7 +23,7 @@ Port: 3306
     $link = mysqli_connect("remotemysql.com", "5HDGpZQpM6", "HxrlVnUEGT")
         or die("Не удалось соединиться с сервером");
 
-    mysqli_select_db($link, "guest_book")
+    mysqli_select_db($link, "5HDGpZQpM6")
         or die("Не удалось выбрать БД");
 
     // echo 'Hello WORLD!!!';
