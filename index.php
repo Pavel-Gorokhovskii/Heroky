@@ -20,7 +20,6 @@
     $result = mysqli_query($link, "SELECT * FROM guest_book")
         or die("Не удалось выполнить запрос");
 
-    print_r($result);
 
     echo "<table>\n";
     while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
