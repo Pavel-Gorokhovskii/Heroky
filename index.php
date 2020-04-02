@@ -10,16 +10,17 @@
 <body>
     <?php
 
-    $link = mysqli_connect("remotemysql.com", "5HDGpZQpM6", "HxrlVnUEGT")
+    $link = mysqli_connect("remotemysql.com", "5HDGpZQpM6", "DsY35iC0qn")
         or die("Не удалось соединиться с сервером");
 
     mysqli_select_db($link, "5HDGpZQpM6")
         or die("Не удалось выбрать БД");
 
-    $query = "SELECT * FROM 5HDGpZQpM6";
 
-    $result = mysqli_query($link, $query)
+    $result = mysqli_query($link, "SELECT * FROM guest_book")
         or die("Не удалось выполнить запрос");
+
+    print_r($result);
 
     echo "<table>\n";
     while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
@@ -40,7 +41,7 @@ Username: 5HDGpZQpM6
 
 Database name: 5HDGpZQpM6
 
-Password: HxrlVnUEGT
+Password: DsY35iC0qn
 
 Server: remotemysql.com
 
