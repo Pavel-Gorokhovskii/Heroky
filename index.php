@@ -9,17 +9,7 @@
 
 <body>
     <?php
-    /*
-Username: 5HDGpZQpM6
 
-Database name: 5HDGpZQpM6
-
-Password: HxrlVnUEGT
-
-Server: remotemysql.com
-
-Port: 3306
-    */
     $link = mysqli_connect("remotemysql.com", "5HDGpZQpM6", "HxrlVnUEGT")
         or die("Не удалось соединиться с сервером");
 
@@ -31,10 +21,10 @@ Port: 3306
     $result = mysqli_query($link, $query)
         or die("Не удалось выполнить запрос");
 
-    echo "<table class = 'tables'>\n";
+    echo "<table>\n";
     while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
         echo "<tr>";
-        echo "<td> <a href = 'del.php?id=$row[0]'>" . $row[0] . "</a></td>";
+        echo "<td>" . $row[0] . "</td>";
         echo "<td>" . $row[1] . "</td>";
         echo "<td>" . $row[2] . "</td>";
         echo "</tr>";
@@ -45,7 +35,17 @@ Port: 3306
 
     mysqli_close($link);
 
+    /*
+Username: 5HDGpZQpM6
 
+Database name: 5HDGpZQpM6
+
+Password: HxrlVnUEGT
+
+Server: remotemysql.com
+
+Port: 3306
+    */
 
     ?>
 </body>
