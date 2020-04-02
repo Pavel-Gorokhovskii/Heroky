@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href='style.css' rel="stylesheet">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
         or die("Не удалось выполнить запрос");
 
 
-    echo "<table>\n";
+    echo "<table class = 'tables'>\n";
     while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
         echo "<tr>";
         echo "<td>" . $row[0] . "</td>";
