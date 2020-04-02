@@ -26,11 +26,24 @@ Port: 3306
     mysqli_select_db($link, "5HDGpZQpM6")
         or die("Не удалось выбрать БД");
 
-    // echo 'Hello WORLD!!!';
+    $query = "SELECT * FROM 5HDGpZQpM6";
 
-    // for ($i = 1; $i <= 10; $i++) {
-    //     echo "<br> $i";
-    // }
+    $result = mysqli_query($link, $query)
+        or die("Не удалось выполнить запрос");
+
+    echo "<table class = 'tables'>\n";
+    while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
+        echo "<tr>";
+        echo "<td> <a href = 'del.php?id=$row[0]'>" . $row[0] . "</a></td>";
+        echo "<td>" . $row[1] . "</td>";
+        echo "<td>" . $row[2] . "</td>";
+        echo "</tr>";
+    }
+    echo "</table>\n";
+
+    mysqli_free_result($result);
+
+    mysqli_close($link);
 
 
 
