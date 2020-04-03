@@ -11,32 +11,31 @@
 <body>
     <?php
 
-    // $link = mysqli_connect("remotemysql.com", "5HDGpZQpM6", "DsY35iC0qn")
-    //     or die("Не удалось соединиться с сервером");
+    $link = mysqli_connect("remotemysql.com", "5HDGpZQpM6", "DsY35iC0qn")
+        or die("Не удалось соединиться с сервером");
 
-    // mysqli_select_db($link, "5HDGpZQpM6")
-    //     or die("Не удалось выбрать БД");
-
-
-    // $result = mysqli_query($link, "SELECT * FROM guest_book")
-    //     or die("Не удалось выполнить запрос");
+    mysqli_select_db($link, "5HDGpZQpM6")
+        or die("Не удалось выбрать БД");
 
 
-    // echo "<table class = 'tables'>\n";
-    // while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
-    //     echo "<tr>";
-    //     echo "<td>" . $row[0] . "</td>";
-    //     echo "<td>" . $row[1] . "</td>";
-    //     echo "<td>" . $row[2] . "</td>";
-    //     echo "</tr>";
-    // }
-    // echo "</table>\n";
+    $result = mysqli_query($link, "SELECT * FROM guest_book")
+        or die("Не удалось выполнить запрос");
 
-    // mysqli_free_result($result);
 
-    // mysqli_close($link);
+    echo "<table class = 'tables'>\n";
+    while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
+        echo "<tr>";
+        echo "<td>" . $row[0] . "</td>";
+        echo "<td>" . $row[1] . "</td>";
+        echo "<td>" . $row[2] . "</td>";
+        echo "</tr>";
+    }
+    echo "</table>\n";
 
-    phpinfo();
+    mysqli_free_result($result);
+
+    mysqli_close($link);
+
 
     /*
 Username: 5HDGpZQpM6
